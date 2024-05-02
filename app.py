@@ -7,7 +7,7 @@ ACCESS_TOKEN = 'EAAGdIZANGm3kBO3NXyBi8DmJxcPdfgVLnOAAEZADloYP5K2u1P4aVpwoKYUK3vK
 VERIFY_TOKEN = '8a8d0a9e0cd0fe6b5ab0b97805c2e537'
 bot = Bot(ACCESS_TOKEN)
 
-@app.route("/", methods=['GET', 'POST'])
+@app.route("/webhook", methods=['GET', 'POST'])
 def receive_message():
     if request.method == 'GET':
         token_sent = request.args.get("hub.verify_token")
