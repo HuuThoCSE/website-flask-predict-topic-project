@@ -3,8 +3,8 @@ from pymessenger.bot import Bot
 import random
 
 app = Flask(__name__)
-ACCESS_TOKEN = 'EAAQxS0IAz3oBO6rqdXiYlC3XUUjmwpdtjQZCsXDaWRra321HzgNfcGK5YDiem7zDGy0VM5lTkmZBVl3GQdWUrRbXExxxwyTUbIf6UEQ61ZBMZBs3KNpgOk4M7Vki28cRAESRNcQOPUzivGcTqAc75OBGHFkxh1tn3PJxzejOYDipzhH72o15Hyk68GiFb6tXFdZBQjV4TwPZAx0enqu5ZBubbBl4z2lzkRZACNLcOydnK9QhGWxUhrNJxWmiDg4cOVBiS8KyhmEZBTzwZD'
-VERIFY_TOKEN = 'afc7b8b931b6a2bfb07e0e58659dc1aa'
+ACCESS_TOKEN = 'EAAGdIZANGm3kBO3NXyBi8DmJxcPdfgVLnOAAEZADloYP5K2u1P4aVpwoKYUK3vKiadzs5irF7amfpM3nWG1UoTztgkyOUZC941hEKDNlTc5Pw675dftgg6RleZBJ8xKY0PQLnd4XeLqCrzZB9Q0Ozn6XffllpJfZBvuVDkCIr8bKNIIwAhjPzHjtrWdabaJMf3vAZDZD'
+VERIFY_TOKEN = '8a8d0a9e0cd0fe6b5ab0b97805c2e537'
 bot = Bot(ACCESS_TOKEN)
 
 @app.route("/", methods=['GET', 'POST'])
@@ -13,6 +13,7 @@ def receive_message():
         token_sent = request.args.get("hub.verify_token")
         return verify_fb_token(token_sent)
     else:
+    
         output = request.get_json()
         for event in output['entry']:
             messaging = event['messaging']
